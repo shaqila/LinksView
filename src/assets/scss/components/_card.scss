@@ -1,0 +1,100 @@
+.card {
+  margin: 0.8rem;
+  width: 40rem;
+  box-shadow: $box-shadow;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(3.9px);
+  -webkit-backdrop-filter: blur(3.9px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #bbbbbb;
+
+  &__body {
+    padding: 0 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    margin: 0.8rem;
+  }
+
+  &__input {
+    padding: 0.8rem;
+    width: 30rem;
+    height: 0.5rem;
+    border: 0;
+    outline: 0;
+    font-size: large;
+    background: transparent;
+    border-bottom: 3px solid #bbbbbb;
+    color: #bbbbbb;
+
+    &:focus {
+      border-bottom: 3px solid;
+      border-image: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
+      border-image-slice: 1;
+    }
+  }
+
+  &__reset {
+    margin: 0.8rem;
+    cursor: pointer;
+
+    &--copied {
+      color: rgb(47, 150, 247);
+    }
+
+    &:hover {
+      color: #f9ce34;
+    }
+  }
+
+  &__footer {
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  &__label {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__pick {
+    display: none;
+  }
+
+  &__button {
+    display: flex;
+    padding: 0.5rem 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: medium;
+    cursor: pointer;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3.9px);
+    -webkit-backdrop-filter: blur(3.9px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    color: #bbbbbb;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border-color: #bbbbbb;
+    }
+  }
+
+  &__pick:checked + &__button {
+    background: rgba(99, 99, 99, 0.5);
+    border-color: rgba(99, 99, 99, 0.5);
+    color: #2b2b2b;
+  }
+}

@@ -1,0 +1,47 @@
+.preview {
+  display: flex;
+  padding: 1.5rem 3rem;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__info-title {
+    font-weight: 700;
+    font-size: larger;
+  }
+
+  &__info-desc {
+    margin: 1rem 0;
+    font-size: small;
+  }
+
+  &__total {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    &-icon {
+      margin-right: 0.2rem;
+    }
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+  }
+
+  &__shrink {
+    font-weight: 800;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+img {
+  border-radius: 1rem;
+  max-width: 10rem;
+}
