@@ -32,8 +32,8 @@
     color: #bbbbbb;
 
     &:focus {
-      border-bottom: 3px solid;
-      border-image: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
+      border-bottom: 3px solid rgb(47, 150, 247);
+      // border-image: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
       border-image-slice: 1;
     }
   }

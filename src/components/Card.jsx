@@ -24,21 +24,40 @@ const Card = () => {
     }
   };
 
+  // const generateLinkShrink = async (longUrl) => {
+  //   try {
+  //     const response = await axios.post(
+  //       "https://api-ssl.bitly.com/v4/shorten",
+  //       {
+  //         long_url: longUrl,
+  //       },
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: "Bearer 1BFXmg1C1g2EHaLvdbE4H0hSPRb0y32L8muQESTnOuWHW",
+  //         },
+  //       }
+  //     );
+  //     return response.data.id;
+  //   } catch (error) {
+  //     console.error("Error generating short link:", error);
+  //   }
+  // };
+
   const generateLinkShrink = async (longUrl) => {
     try {
-      const response = await axios.post(
-        "https://api-ssl.bitly.com/v4/shorten",
-        {
-          long_url: longUrl,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer 59e25d874eeb2b2bdd04cca720e87b5b3e582b03",
-          },
-        }
+      const response = await axios.get(
+        `https://is.gd/create.php?format=json&url=${encodeURIComponent(
+          longUrl
+        )}`
       );
-      return response.data.id;
+
+      if (response.data.shorturl) {
+        console.log(response.data.shorturl);
+        return response.data.shorturl;
+      } else {
+        console.error("Error generating short link:", response.data.error);
+      }
     } catch (error) {
       console.error("Error generating short link:", error);
     }
@@ -147,7 +166,7 @@ const Card = () => {
       {linkShrink && (
         <div className="preview">
           <div className="preview__shrink">
-            <h3>{linkShrink}</h3>
+            <h3>Short Link : {linkShrink}</h3>
             <div
               className={copied ? "card__reset--copied" : "card__reset"}
               onClick={handleCopy}
